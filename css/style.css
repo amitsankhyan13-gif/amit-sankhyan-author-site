@@ -280,3 +280,117 @@ section {
     font-size: 28px;
   }
 }
+/* ===============================
+   Books Page – Rupi-style Layout
+================================ */
+.books-ru {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* Left list */
+.books-ru-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.books-ru-item {
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #6b5b95;
+  cursor: pointer;
+  padding-left: 10px;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.books-ru-item:hover {
+  color: #ff7aa2;
+}
+
+.books-ru-item.active {
+  color: #3a2f4f;
+  font-weight: 500;
+  border-color: #ff7aa2;
+}
+
+/* Right content */
+.books-ru-detail {
+  position: relative;
+}
+
+.books-ru-content {
+  display: none;
+  animation: fadeBook 0.4s ease;
+}
+
+.books-ru-content.active {
+  display: block;
+}
+
+@keyframes fadeBook {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.books-ru-content img {
+  width: 260px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.books-ru-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.books-ru-content p {
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+/* Buy links */
+.books-ru-buy {
+  display: flex;
+  gap: 20px;
+}
+
+.books-ru-buy a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #6b5b95;
+  border-bottom: 1px solid transparent;
+}
+
+.books-ru-buy a:hover {
+  color: #ff7aa2;
+  border-color: #ff7aa2;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .books-ru {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .books-ru-content img {
+    width: 220px;
+  }
+}
