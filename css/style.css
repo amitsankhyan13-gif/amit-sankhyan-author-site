@@ -174,35 +174,6 @@ section {
 }
 
 /* ===============================
-   Books Page (BASIC – STABLE)
-================================ */
-.books-page {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-.book-detail {
-  margin-bottom: 40px;
-}
-
-.book-detail h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.book-detail p {
-  color: #4a3f63;
-}
-
-.buy {
-  color: #ff7aa2;
-  margin-top: 8px;
-  font-size: 14px;
-}
-
-/* ===============================
    Thoughts Page
 ================================ */
 .thoughts-page {
@@ -280,117 +251,69 @@ section {
     font-size: 28px;
   }
 }
+
 /* ===============================
-   Books Page – Rupi-style Layout
+   Books List Layout (Reference-like)
 ================================ */
-.books-ru {
-  max-width: 1200px;
-  margin: 100px auto;
+.books-list {
+  max-width: 1100px;
+  margin: 80px auto;
   padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  gap: 80px;
+}
+
+.book-card {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 60px;
   align-items: flex-start;
 }
 
-/* Left list */
-.books-ru-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.book-card img {
+  width: 240px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
-.books-ru-item {
-  background: none;
-  border: none;
-  text-align: left;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  color: #6b5b95;
-  cursor: pointer;
-  padding-left: 10px;
-  border-left: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.books-ru-item:hover {
-  color: #ff7aa2;
-}
-
-.books-ru-item.active {
-  color: #3a2f4f;
-  font-weight: 500;
-  border-color: #ff7aa2;
-}
-
-/* Right content */
-.books-ru-detail {
-  position: relative;
-}
-
-.books-ru-content {
-  display: none;
-  animation: fadeBook 0.4s ease;
-}
-
-.books-ru-content.active {
-  display: block;
-}
-
-@keyframes fadeBook {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.books-ru-content img {
-  width: 260px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-}
-
-.books-ru-content h2 {
+.book-info h2 {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  color: #3a2f4f;
 }
 
-.books-ru-content p {
-  max-width: 520px;
+.book-info p {
   margin-bottom: 20px;
+  color: #4a3f63;
+  font-size: 16px;
 }
 
-/* Buy links */
-.books-ru-buy {
+.buy-links {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
-.books-ru-buy a {
+.buy-links .buy {
   text-decoration: none;
-  font-size: 14px;
-  color: #6b5b95;
-  border-bottom: 1px solid transparent;
+  padding: 8px 16px;
+  font-size: 15px;
+  color: #fff;
+  background: #6b5b95;
+  border-radius: 18px;
+  transition: background 0.3s;
 }
 
-.books-ru-buy a:hover {
-  color: #ff7aa2;
-  border-color: #ff7aa2;
+.buy-links .buy:hover {
+  background: #ff7aa2;
 }
 
 /* Mobile */
-@media (max-width: 900px) {
-  .books-ru {
-    grid-template-columns: 1fr;
-    gap: 50px;
+@media (max-width: 800px) {
+  .book-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-
-  .books-ru-content img {
-    width: 220px;
+  .book-card img {
+    width: 200px;
   }
 }
