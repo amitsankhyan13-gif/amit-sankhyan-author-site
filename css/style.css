@@ -286,22 +286,3 @@ section {
     min-height: 300px;
   }
 }
-/* ===============================
-   Books Page – Image Size ONLY FIX
-================================ */
-
-/* Lock image container behavior */
-.book-body img {
-  width: 220px;
-  height: auto;
-  max-width: 220px;
-  min-width: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  flex-shrink: 0;
-}
-
-/* Keep text alignment stable */
-.book-body {
-  align-items: flex-start;
-}
