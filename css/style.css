@@ -397,3 +397,66 @@ section {
     align-self: center;
   }
 }
+/* ===============================
+   Wandering Thoughts (Subtle)
+================================ */
+
+.wandering-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.wander {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.05),
+    transparent
+  );
+  filter: blur(8px);
+  animation: drift 30s ease-in-out infinite alternate;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Individual placement */
+.wander:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-duration: 34s;
+}
+
+.wander:nth-child(2) {
+  top: 55%;
+  left: 65%;
+  animation-duration: 28s;
+}
+
+.wander:nth-child(3) {
+  top: 75%;
+  left: 30%;
+  animation-duration: 40s;
+}
+
+/* Motion */
+@keyframes drift {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* Disable on mobile */
+@media (max-width: 768px) {
+  .wandering-layer {
+    display: none;
+  }
+}
