@@ -407,3 +407,59 @@ section:nth-of-type(4) { animation-delay: 0.65s; }
   color: #ff7aa2;
   border-color: #ff7aa2;
 }
+/* ===============================
+   Books Page – Left / Right Layout
+================================ */
+.books-layout {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Left list */
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.book-item {
+  cursor: pointer;
+  font-size: 16px;
+  color: #6b5b95;
+  padding-left: 10px;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.book-item:hover {
+  color: #ff7aa2;
+}
+
+.book-item.active {
+  color: #3a2f4f;
+  border-color: #ff7aa2;
+  font-weight: 500;
+}
+
+/* Right content */
+.book-display .book-detail {
+  display: none;
+}
+
+.book-display .book-detail.active {
+  display: block;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
