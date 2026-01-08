@@ -256,3 +256,52 @@ section {
     font-size: 28px;
   }
 }
+/* ===============================
+   Books Page – FINAL Image Lock
+   (DO NOT AFFECT OTHER PAGES)
+================================ */
+
+/* Lock book cover size */
+.books-list .book-body img {
+  width: 240px;
+  height: 360px;
+  min-width: 240px;
+  min-height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+/* Ensure text aligns cleanly */
+.books-list .book-body {
+  align-items: flex-start;
+}
+
+/* Mobile safety */
+@media (max-width: 800px) {
+  .books-list .book-body img {
+    width: 200px;
+    height: 300px;
+    min-width: 200px;
+    min-height: 300px;
+  }
+}
+/* ===============================
+   Books Page – Image Size ONLY FIX
+================================ */
+
+/* Lock image container behavior */
+.book-body img {
+  width: 220px;
+  height: auto;
+  max-width: 220px;
+  min-width: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+/* Keep text alignment stable */
+.book-body {
+  align-items: flex-start;
+}
