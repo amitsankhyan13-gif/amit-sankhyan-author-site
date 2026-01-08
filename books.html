@@ -21,72 +21,86 @@
   </nav>
 
   <!-- Books Section -->
- <section class="books-page books-layout">
+  <section class="books-ru">
 
-  <!-- LEFT: Book List -->
-  <div class="book-list">
-    <div class="book-item active" onclick="showBook(0)">The Silence Before the Sound</div>
-    <div class="book-item" onclick="showBook(1)">The Resonance of Transformation</div>
-    <div class="book-item" onclick="showBook(2)">Breathed Once Belonged Once</div>
-  </div>
-
-  <!-- RIGHT: Book Content -->
-  <div class="book-display">
-
-    <div class="book-detail active">
-      <h3>Part 1 – The Silence Before the Sound</h3>
-      <p>
-        A reflection on the unseen moments before a trainer finds their voice.
-        This book explores corporate learning through awareness, patience,
-        and the inner journey that shapes impactful trainers.
-      </p>
-      <p class="buy">Amazon · Google Books · Books2Read</p>
+    <!-- Left: Book Titles -->
+    <div class="books-ru-list">
+      <button class="books-ru-item active" onclick="showBook(0)">
+        The Silence Before the Sound
+      </button>
+      <button class="books-ru-item" onclick="showBook(1)">
+        The Resonance of Transformation
+      </button>
+      <button class="books-ru-item" onclick="showBook(2)">
+        Breathed Once Belonged Once
+      </button>
     </div>
 
-    <div class="book-detail">
-      <h3>The Resonance of Transformation</h3>
-      <p>
-        A deeper exploration of growth, resistance, and change within learning environments,
-        where transformation is felt long before it is measured.
-      </p>
-      <p class="buy">Amazon · Google Books · Books2Read</p>
+    <!-- Right: Book Detail -->
+    <div class="books-ru-detail">
+
+      <!-- Book 1 -->
+      <div class="books-ru-content active">
+        <img src="images/book1.jpg" alt="The Silence Before the Sound">
+        <h2>The Silence Before the Sound</h2>
+        <p>
+          A reflection on the unseen moments before a trainer finds their voice.
+          This book explores corporate learning through awareness, patience,
+          and the inner journey that shapes impactful trainers.
+        </p>
+        <div class="books-ru-buy">
+          <a href="#">Amazon</a>
+          <a href="#">Google Books</a>
+          <a href="#">Books2Read</a>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="books-ru-content">
+        <img src="images/book2.jpg" alt="The Resonance of Transformation">
+        <h2>The Resonance of Transformation</h2>
+        <p>
+          A deeper exploration of growth, resistance, and change within learning environments,
+          where transformation is felt long before it is measured.
+        </p>
+        <div class="books-ru-buy">
+          <a href="#">Amazon</a>
+          <a href="#">Google Books</a>
+          <a href="#">Books2Read</a>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="books-ru-content">
+        <img src="images/book3.jpg" alt="Breathed Once Belonged Once">
+        <h2>Breathed Once Belonged Once</h2>
+        <p>
+          “They were almost forever.”  
+          A love story shaped by moments that were brief,
+          intense, and impossible to forget.
+        </p>
+        <div class="books-ru-buy">
+          <a href="#">Amazon</a>
+          <a href="#">Google Books</a>
+          <a href="#">Books2Read</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="book-detail">
-      <h3>Breathed Once Belonged Once</h3>
-      <p>
-        “They were almost forever.”
-        A love story shaped by moments that were brief,
-        intense, and impossible to forget.
-      </p>
-      <p class="buy">Amazon · Google Books · Books2Read</p>
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 <script>
 function showBook(index) {
-  const items = document.querySelectorAll('.book-item');
-  const details = document.querySelectorAll('.book-detail');
+  const buttons = document.querySelectorAll('.books-ru-item');
+  const contents = document.querySelectorAll('.books-ru-content');
 
-  items.forEach(i => i.classList.remove('active'));
-  details.forEach(d => d.classList.remove('active'));
-
-  items[index].classList.add('active');
-  details[index].classList.add('active');
+  buttons.forEach((btn, i) => {
+    btn.classList.toggle('active', i === index);
+    contents[i].classList.toggle('active', i === index);
+  });
 }
 </script>
-
-  <!-- Script -->
-  <script>
-    function toggleBook(selectedBook) {
-      const books = document.querySelectorAll('.book-detail');
-      books.forEach(book => book.classList.remove('active'));
-      selectedBook.classList.add('active');
-    }
-  </script>
 
 </body>
 </html>
