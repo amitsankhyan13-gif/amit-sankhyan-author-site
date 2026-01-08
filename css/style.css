@@ -209,36 +209,6 @@ body {
   color: #5a4d7c;
   text-align: center;
 }
-
-/* ===============================
-   Contact Page
-================================ */
-.contact-page {
-  max-width: 600px;
-  margin: 120px auto;
-  text-align: center;
-}
-
-.contact-page p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #6b5b95;
-  cursor: pointer;
-}
-
-.contact-page p:hover {
-  color: #ff7aa2;
-}
-
-/* ===============================
-   Responsive
-================================ */
-@media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
 /* ===============================
    Book Click Interaction
 ================================ */
@@ -268,27 +238,46 @@ body {
   max-height: 500px;
 }
 /* ===============================
-   Contact Page – Centered & Themed
+   Contact Page – Final
 ================================ */
-.contact-icons {
-  min-height: 70vh;
+.contact-section {
+  min-height: 75vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  text-align: center;
+  padding: 0 20px;
 }
 
-/* Icon Styling */
+.contact-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #3a2f4f;
+}
+
+.contact-section p {
+  max-width: 520px;
+  font-size: 16px;
+  color: #5a4d7c;
+  margin-bottom: 50px;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 70px;
+}
+
+/* FORCE ICON SIZE & COLOR */
 .contact-icons a {
-  font-size: 30px;
-  color: #5a4d7c; /* matches site theme */
+  font-size: 42px;              /* BIG ICONS */
+  color: #6b5b95 !important;    /* THEME COLOR – NO BLUE */
   text-decoration: none;
   transition: transform 0.35s ease, color 0.35s ease;
 }
 
-/* Hover Effect */
 .contact-icons a:hover {
-  color: #ff7aa2; /* accent pink */
-  transform: translateY(-8px);
+  color: #ff7aa2 !important;
+  transform: translateY(-10px);
 }
-
