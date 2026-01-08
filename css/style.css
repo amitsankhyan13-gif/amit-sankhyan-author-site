@@ -238,7 +238,7 @@ body {
   max-height: 500px;
 }
 /* ===============================
-   Contact Page – Final
+   Contact Page – FINAL
 ================================ */
 .contact-section {
   min-height: 75vh;
@@ -269,30 +269,9 @@ body {
   gap: 70px;
 }
 
-/* FORCE ICON SIZE & COLOR */
 .contact-icons a {
-  font-size: 42px;              /* BIG ICONS */
-  color: #6b5b95 !important;    /* THEME COLOR – NO BLUE */
-  text-decoration: none;
-  transition: transform 0.35s ease, color 0.35s ease;
-}
-
-.contact-icons a:hover {
-  color: #ff7aa2 !important;
-  transform: translateY(-10px);
-}
-/* ===============================
-   Contact Icons – SVG (Reliable)
-================================ */
-.contact-icons {
-  display: flex;
-  gap: 70px;
-  margin-top: 20px;
-}
-
-.contact-icons a {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   color: #6b5b95;
   transition: transform 0.35s ease, color 0.35s ease;
 }
