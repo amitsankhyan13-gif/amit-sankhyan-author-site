@@ -13,14 +13,40 @@
 }
 
 /* ===============================
-   Body
+   Body (Merged & Clean)
 ================================ */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(180deg, #fdf6f0, #f7f0ff);
   color: #3a2f4f;
-  line-height: 1.8;
+  line-height: 1.9;
   padding-bottom: 80px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===============================
+   Typography Hierarchy
+================================ */
+h1, h2, h3 {
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+blockquote {
+  line-height: 1.8;
+  letter-spacing: 0.3px;
 }
 
 /* ===============================
@@ -35,10 +61,10 @@ body {
 
 .nav-name a {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 30px;
+  letter-spacing: 1.2px;
   color: #3a2f4f;
   text-decoration: none;
-  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -59,11 +85,18 @@ body {
 }
 
 /* ===============================
+   Section Spacing (Luxury Rhythm)
+================================ */
+section {
+  margin-bottom: 120px;
+}
+
+/* ===============================
    Author Bio
 ================================ */
 .bio {
   max-width: 900px;
-  margin: 80px auto;
+  margin: 100px auto 120px;
   text-align: center;
   padding: 0 20px;
 }
@@ -83,7 +116,7 @@ body {
 }
 
 /* ===============================
-   Thought Highlight
+   Thought Highlight (Home)
 ================================ */
 .thought {
   max-width: 800px;
@@ -107,14 +140,11 @@ body {
 ================================ */
 .books-preview {
   max-width: 1100px;
-  margin: 100px auto;
+  margin: 120px auto;
   padding: 0 20px;
 }
 
 .books-preview h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -145,7 +175,7 @@ body {
 
 .book h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 8px;
 }
 
@@ -164,15 +194,17 @@ body {
 }
 
 .books-page h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  margin: 50px 0 25px;
+  margin-top: 80px;
 }
 
+/* Book Card (Merged & Clean) */
 .book-detail {
-  margin-bottom: 40px;
-  padding-bottom: 30px;
+  margin: 30px 0 40px;
+  padding: 25px;
+  cursor: pointer;
+  border-radius: 16px;
   border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .book-detail h3 {
@@ -184,6 +216,26 @@ body {
 .book-detail p {
   font-size: 15px;
   color: #4a3f63;
+}
+
+.book-detail:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.book-detail.active {
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Expand / Collapse Content */
+.book-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.book-detail.active .book-content {
+  max-height: 500px;
 }
 
 .buy {
@@ -205,40 +257,13 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   font-style: italic;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   color: #5a4d7c;
   text-align: center;
 }
+
 /* ===============================
-   Book Click Interaction
-================================ */
-.book-detail {
-  cursor: pointer;
-  padding: 25px;
-  border-radius: 16px;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-
-.book-detail:hover {
-  background: rgba(255,255,255,0.5);
-}
-
-.book-detail.active {
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-.book-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.book-detail.active .book-content {
-  max-height: 500px;
-}
-/* ===============================
-   Contact Page – FINAL
+   Contact Page
 ================================ */
 .contact-section {
   min-height: 75vh;
@@ -254,7 +279,6 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   margin-bottom: 15px;
-  color: #3a2f4f;
 }
 
 .contact-section p {
@@ -285,4 +309,18 @@ body {
 .contact-icons a:hover {
   color: #ff7aa2;
   transform: translateY(-10px);
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
 }
