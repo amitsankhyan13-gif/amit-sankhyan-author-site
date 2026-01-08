@@ -397,6 +397,9 @@ section {
     align-self: center;
   }
 }
+.thoughts-page {
+  position: relative;
+}
 /* ===============================
    Wandering Thoughts (Subtle)
 ================================ */
