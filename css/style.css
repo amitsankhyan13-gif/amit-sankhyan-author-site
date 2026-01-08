@@ -303,7 +303,18 @@ section {
 .contact-icons a svg {
   width: 100%;
   height: 100%;
-  }
+}
+
+/* Outline icons (Email, Instagram) */
+.contact-icons a svg[fill="none"] {
+  stroke: currentColor;
+}
+
+/* Solid icons (LinkedIn) */
+.contact-icons a svg[fill="currentColor"] {
+  fill: currentColor;
+}
+
 
 .contact-icons a:hover {
   color: #ff7aa2;
