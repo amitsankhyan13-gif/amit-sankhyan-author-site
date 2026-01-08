@@ -77,6 +77,23 @@
     </div>
 
   </section>
+<script>
+const thoughts = [
+  "Growth often feels like confusion before it feels like clarity.",
+  "Some lessons arrive loudly. The ones that change us arrive in silence.",
+  "Listening is sometimes the most generous form of leadership."
+];
+
+const display = document.querySelector('.featured-thought blockquote');
+const wanderers = document.querySelectorAll('.wander');
+
+wanderers.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    const index = el.dataset.thought;
+    display.textContent = thoughts[index];
+  });
+});
+</script>
 
 </body>
 </html>
