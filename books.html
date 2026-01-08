@@ -76,6 +76,30 @@
     </div>
 
   </section>
+<script>
+(function () {
+  const books = document.querySelectorAll('.book-card');
+
+  function showBookFromHash() {
+    const hash = window.location.hash.replace('#', '');
+
+    books.forEach(book => {
+      book.classList.remove('active');
+      if (book.id === hash) {
+        book.classList.add('active');
+      }
+    });
+
+    // Fallback: if no hash, show first book
+    if (!hash && books.length > 0) {
+      books[0].classList.add('active');
+    }
+  }
+
+  window.addEventListener('load', showBookFromHash);
+  window.addEventListener('hashchange', showBookFromHash);
+})();
+</script>
 
 </body>
 </html>
