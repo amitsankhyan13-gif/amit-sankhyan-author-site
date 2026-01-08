@@ -20,84 +20,103 @@
     </ul>
   </nav>
 
+  <!-- Books Section -->
   <section class="books-list">
 
     <!-- Book 1 -->
-    <div class="book-card" id="book1">
-      <img src="book1.jpg" alt="The Silence Before the Sound">
-      <div class="book-info">
-        <h2>The Silence Before the Sound</h2>
-        <p>
-          A reflection on the unseen moments before a trainer finds their voice.
-          This book explores corporate learning through awareness, patience,
-          and the inner journey that shapes impactful trainers.
-        </p>
-        <div class="buy-links">
-          <a href="#" class="buy">Amazon</a>
-          <a href="#" class="buy">Google Books</a>
-          <a href="#" class="buy">Books2Read</a>
+    <div class="book-card active" id="book1">
+      <button class="book-header">
+        <span>The Silence Before the Sound</span>
+      </button>
+      <div class="book-body">
+        <img src="book1.jpg" alt="The Silence Before the Sound">
+        <div class="book-info">
+          <h2>The Silence Before the Sound</h2>
+          <p>
+            A reflection on the unseen moments before a trainer finds their voice.
+            This book explores corporate learning through awareness, patience,
+            and the inner journey that shapes impactful trainers.
+          </p>
+          <div class="buy-links">
+            <a href="#" class="buy">Amazon</a>
+            <a href="#" class="buy">Google Books</a>
+            <a href="#" class="buy">Books2Read</a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Book 2 -->
     <div class="book-card" id="book2">
-      <img src="book2.jpg" alt="The Resonance of Transformation">
-      <div class="book-info">
-        <h2>The Resonance of Transformation</h2>
-        <p>
-          A deeper exploration of growth, resistance, and change within learning environments,
-          where transformation is felt long before it is measured.
-        </p>
-        <div class="buy-links">
-          <a href="#" class="buy">Amazon</a>
-          <a href="#" class="buy">Google Books</a>
-          <a href="#" class="buy">Books2Read</a>
+      <button class="book-header">
+        <span>The Resonance of Transformation</span>
+      </button>
+      <div class="book-body">
+        <img src="book2.jpg" alt="The Resonance of Transformation">
+        <div class="book-info">
+          <h2>The Resonance of Transformation</h2>
+          <p>
+            A deeper exploration of growth, resistance, and change within learning environments,
+            where transformation is felt long before it is measured.
+          </p>
+          <div class="buy-links">
+            <a href="#" class="buy">Amazon</a>
+            <a href="#" class="buy">Google Books</a>
+            <a href="#" class="buy">Books2Read</a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Book 3 -->
     <div class="book-card" id="book3">
-      <img src="book3.jpg" alt="Breathed Once Belonged Once">
-      <div class="book-info">
-        <h2>Breathed Once Belonged Once</h2>
-        <p>
-          “They were almost forever.”  
-          A love story shaped by moments that were brief, intense,
-          and impossible to forget.
-        </p>
-        <div class="buy-links">
-          <a href="#" class="buy">Amazon</a>
-          <a href="#" class="buy">Google Books</a>
-          <a href="#" class="buy">Books2Read</a>
+      <button class="book-header">
+        <span>Breathed Once Belonged Once</span>
+      </button>
+      <div class="book-body">
+        <img src="book3.jpg" alt="Breathed Once Belonged Once">
+        <div class="book-info">
+          <h2>Breathed Once Belonged Once</h2>
+          <p>
+            “They were almost forever.”  
+            A love story shaped by moments that were brief,
+            intense, and impossible to forget.
+          </p>
+          <div class="buy-links">
+            <a href="#" class="buy">Amazon</a>
+            <a href="#" class="buy">Google Books</a>
+            <a href="#" class="buy">Books2Read</a>
+          </div>
         </div>
       </div>
     </div>
 
   </section>
+
 <script>
 (function () {
-  const books = document.querySelectorAll('.book-card');
+  const cards = document.querySelectorAll('.book-card');
+  const headers = document.querySelectorAll('.book-header');
 
-  function showBookFromHash() {
-    const hash = window.location.hash.replace('#', '');
-
-    books.forEach(book => {
-      book.classList.remove('active');
-      if (book.id === hash) {
-        book.classList.add('active');
-      }
+  function activateBook(id) {
+    cards.forEach(card => {
+      card.classList.toggle('active', card.id === id);
     });
-
-    // Fallback: if no hash, show first book
-    if (!hash && books.length > 0) {
-      books[0].classList.add('active');
-    }
   }
 
-  window.addEventListener('load', showBookFromHash);
-  window.addEventListener('hashchange', showBookFromHash);
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const card = header.closest('.book-card');
+      activateBook(card.id);
+      history.replaceState(null, '', '#' + card.id);
+    });
+  });
+
+  // Open from hash if present
+  window.addEventListener('load', () => {
+    const hash = location.hash.replace('#', '');
+    if (hash) activateBook(hash);
+  });
 })();
 </script>
 
