@@ -267,4 +267,26 @@ body {
 .book-detail.active .book-content {
   max-height: 500px;
 }
+/* ===============================
+   Contact Icons (Minimal)
+================================ */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 150px;
+}
+
+.contact-icons .icon {
+  font-size: 28px;
+  color: #6b5b95;
+  transition: transform 0.4s ease, color 0.4s ease;
+  text-decoration: none;
+}
+
+.contact-icons .icon:hover {
+  color: #ff7aa2;
+  transform: translateY(-6px);
+}
 
