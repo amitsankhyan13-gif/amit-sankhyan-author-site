@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-name">
       <a href="index.html">Amit Sankhyan</a>
@@ -19,46 +20,61 @@
     </ul>
   </nav>
 
+  <!-- Books Section -->
   <section class="books-page">
 
     <h2>Are You a Trainer? Series</h2>
 
-    <div class="book-detail">
+    <div class="book-detail active" onclick="toggleBook(this)">
       <h3>Part 1 – The Silence Before the Sound</h3>
-      <p>
-        A reflection on the unseen moments before a trainer finds their voice.
-        This book explores corporate learning through awareness, patience,
-        and the inner journey that shapes impactful trainers.
-      </p>
-      <p><strong>Genre:</strong> Corporate Learning</p>
-      <p class="buy">Amazon · Google Books · Books2Read</p>
+      <div class="book-content">
+        <p>
+          A reflection on the unseen moments before a trainer finds their voice.
+          This book explores corporate learning through awareness, patience,
+          and the inner journey that shapes impactful trainers.
+        </p>
+        <p><strong>Genre:</strong> Corporate Learning</p>
+        <p class="buy">Amazon · Google Books · Books2Read</p>
+      </div>
     </div>
 
-    <div class="book-detail">
+    <div class="book-detail" onclick="toggleBook(this)">
       <h3>The Resonance of Transformation</h3>
-      <p>
-        A deeper exploration of growth, resistance, and change within learning environments,
-        where transformation is felt long before it is measured.
-      </p>
-      <p><strong>Genre:</strong> Corporate Learning</p>
-      <p class="buy">Amazon · Google Books · Books2Read</p>
+      <div class="book-content">
+        <p>
+          A deeper exploration of growth, resistance, and change within learning environments,
+          where transformation is felt long before it is measured.
+        </p>
+        <p><strong>Genre:</strong> Corporate Learning</p>
+        <p class="buy">Amazon · Google Books · Books2Read</p>
+      </div>
     </div>
 
     <h2>Standalone</h2>
 
-    <div class="book-detail">
+    <div class="book-detail" onclick="toggleBook(this)">
       <h3>Breathed Once Belonged Once</h3>
-      <p>
-        “They were almost forever.”
-        A love story shaped by moments that were brief,
-        intense, and impossible to forget.
-      </p>
-      <p><strong>Genre:</strong> Love</p>
-      <p class="buy">Amazon · Google Books · Books2Read</p>
+      <div class="book-content">
+        <p>
+          “They were almost forever.”
+          A love story shaped by moments that were brief,
+          intense, and impossible to forget.
+        </p>
+        <p><strong>Genre:</strong> Love</p>
+        <p class="buy">Amazon · Google Books · Books2Read</p>
+      </div>
     </div>
 
   </section>
 
+  <!-- Script -->
+  <script>
+    function toggleBook(selectedBook) {
+      const books = document.querySelectorAll('.book-detail');
+      books.forEach(book => book.classList.remove('active'));
+      selectedBook.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
-
