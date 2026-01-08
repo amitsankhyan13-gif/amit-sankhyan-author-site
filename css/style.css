@@ -286,17 +286,19 @@ section {
     min-height: 300px;
   }
 }
+
 /* ===============================
-   Books Page – Buy Buttons RESTORE
+   Books Page – Buy Buttons (FIX)
+   (Supports existing HTML .buy)
 ================================ */
 
-.books-list .buy-links {
+.books-list .buy {
   display: flex;
   gap: 16px;
   margin-top: 16px;
 }
 
-.books-list .buy-links a {
+.books-list .buy a {
   display: inline-block;
   padding: 10px 18px;
   font-size: 14px;
@@ -308,7 +310,7 @@ section {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.books-list .buy-links a:hover {
+.books-list .buy a:hover {
   background-color: #ff7aa2;
   transform: translateY(-2px);
 }
