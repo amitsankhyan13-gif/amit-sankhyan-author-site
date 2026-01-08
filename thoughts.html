@@ -22,14 +22,17 @@
 
   <!-- Thoughts Section -->
   <section class="thoughts-page">
-<div class="wandering-layer">
-  <div class="wander" data-thought="0"></div>
-  <div class="wander" data-thought="1"></div>
-  <div class="wander" data-thought="2"></div>
-</div>
-    <!-- Featured Thought -->
+
+    <!-- Wandering Thoughts Layer (BACKGROUND) -->
+    <div class="wandering-layer" aria-hidden="true">
+      <div class="wander" data-thought="0"></div>
+      <div class="wander" data-thought="1"></div>
+      <div class="wander" data-thought="2"></div>
+    </div>
+
+    <!-- Featured Thought (FOREGROUND) -->
     <div class="featured-thought">
-      <blockquote>
+      <blockquote id="featured-text">
         Some lessons arrive loudly.  
         The ones that change us forever  
         usually arrive in silence.
@@ -77,23 +80,33 @@
     </div>
 
   </section>
-<script>
-const thoughts = [
-  "Growth often feels like confusion before it feels like clarity.",
-  "Some lessons arrive loudly. The ones that change us arrive in silence.",
-  "Listening is sometimes the most generous form of leadership."
-];
 
-const display = document.querySelector('.featured-thought blockquote');
-const wanderers = document.querySelectorAll('.wander');
+  <!-- Wandering Thoughts Interaction -->
+  <script>
+    const thoughts = [
+      "Growth often feels like confusion before it feels like clarity.",
+      "Some lessons arrive loudly. The ones that change us arrive in silence.",
+      "Listening is sometimes the most generous form of leadership."
+    ];
 
-wanderers.forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    const index = el.dataset.thought;
-    display.textContent = thoughts[index];
-  });
-});
-</script>
+    const display = document.getElementById('featured-text');
+    const wanderers = document.querySelectorAll('.wander');
+
+    wanderers.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const index = Number(el.dataset.thought);
+        if (!thoughts[index]) return;
+
+        // Soft fade transition
+        display.style.opacity = 0;
+
+        setTimeout(() => {
+          display.textContent = thoughts[index];
+          display.style.opacity = 1;
+        }, 250);
+      });
+    });
+  </script>
 
 </body>
 </html>
