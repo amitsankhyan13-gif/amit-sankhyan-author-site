@@ -268,25 +268,27 @@ body {
   max-height: 500px;
 }
 /* ===============================
-   Contact Icons (Minimal)
+   Contact Page – Centered & Themed
 ================================ */
 .contact-icons {
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  margin-top: 150px;
+  gap: 60px;
 }
 
-.contact-icons .icon {
-  font-size: 28px;
-  color: #6b5b95;
-  transition: transform 0.4s ease, color 0.4s ease;
+/* Icon Styling */
+.contact-icons a {
+  font-size: 30px;
+  color: #5a4d7c; /* matches site theme */
   text-decoration: none;
+  transition: transform 0.35s ease, color 0.35s ease;
 }
 
-.contact-icons .icon:hover {
-  color: #ff7aa2;
-  transform: translateY(-6px);
+/* Hover Effect */
+.contact-icons a:hover {
+  color: #ff7aa2; /* accent pink */
+  transform: translateY(-8px);
 }
 
