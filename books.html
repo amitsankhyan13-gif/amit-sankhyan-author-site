@@ -21,51 +21,63 @@
   </nav>
 
   <!-- Books Section -->
-  <section class="books-page">
+ <section class="books-page books-layout">
 
-    <h2>Are You a Trainer? Series</h2>
+  <!-- LEFT: Book List -->
+  <div class="book-list">
+    <div class="book-item active" onclick="showBook(0)">The Silence Before the Sound</div>
+    <div class="book-item" onclick="showBook(1)">The Resonance of Transformation</div>
+    <div class="book-item" onclick="showBook(2)">Breathed Once Belonged Once</div>
+  </div>
 
-    <div class="book-detail active" onclick="toggleBook(this)">
+  <!-- RIGHT: Book Content -->
+  <div class="book-display">
+
+    <div class="book-detail active">
       <h3>Part 1 – The Silence Before the Sound</h3>
-      <div class="book-content">
-        <p>
-          A reflection on the unseen moments before a trainer finds their voice.
-          This book explores corporate learning through awareness, patience,
-          and the inner journey that shapes impactful trainers.
-        </p>
-        <p><strong>Genre:</strong> Corporate Learning</p>
-        <p class="buy">Amazon · Google Books · Books2Read</p>
-      </div>
+      <p>
+        A reflection on the unseen moments before a trainer finds their voice.
+        This book explores corporate learning through awareness, patience,
+        and the inner journey that shapes impactful trainers.
+      </p>
+      <p class="buy">Amazon · Google Books · Books2Read</p>
     </div>
 
-    <div class="book-detail" onclick="toggleBook(this)">
+    <div class="book-detail">
       <h3>The Resonance of Transformation</h3>
-      <div class="book-content">
-        <p>
-          A deeper exploration of growth, resistance, and change within learning environments,
-          where transformation is felt long before it is measured.
-        </p>
-        <p><strong>Genre:</strong> Corporate Learning</p>
-        <p class="buy">Amazon · Google Books · Books2Read</p>
-      </div>
+      <p>
+        A deeper exploration of growth, resistance, and change within learning environments,
+        where transformation is felt long before it is measured.
+      </p>
+      <p class="buy">Amazon · Google Books · Books2Read</p>
     </div>
 
-    <h2>Standalone</h2>
-
-    <div class="book-detail" onclick="toggleBook(this)">
+    <div class="book-detail">
       <h3>Breathed Once Belonged Once</h3>
-      <div class="book-content">
-        <p>
-          “They were almost forever.”
-          A love story shaped by moments that were brief,
-          intense, and impossible to forget.
-        </p>
-        <p><strong>Genre:</strong> Love</p>
-        <p class="buy">Amazon · Google Books · Books2Read</p>
-      </div>
+      <p>
+        “They were almost forever.”
+        A love story shaped by moments that were brief,
+        intense, and impossible to forget.
+      </p>
+      <p class="buy">Amazon · Google Books · Books2Read</p>
     </div>
 
-  </section>
+  </div>
+
+</section>
+
+<script>
+function showBook(index) {
+  const items = document.querySelectorAll('.book-item');
+  const details = document.querySelectorAll('.book-detail');
+
+  items.forEach(i => i.classList.remove('active'));
+  details.forEach(d => d.classList.remove('active'));
+
+  items[index].classList.add('active');
+  details[index].classList.add('active');
+}
+</script>
 
   <!-- Script -->
   <script>
