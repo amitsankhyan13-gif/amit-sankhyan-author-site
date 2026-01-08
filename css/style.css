@@ -75,188 +75,64 @@ p {
 }
 
 /* ===============================
-   Sections (SAFE)
+   Sections
 ================================ */
 section {
   margin-bottom: 100px;
 }
 
 /* ===============================
-   Home – Bio
-================================ */
-.bio {
-  max-width: 900px;
-  margin: 90px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.author-img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 25px;
-}
-
-.bio p {
-  color: #4a3f63;
-}
-
-/* ===============================
-   Thought Highlight (Home)
-================================ */
-.thought {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 40px;
-  background: rgba(255,255,255,0.65);
-  border-radius: 20px;
-}
-
-.thought blockquote {
-  font-family: 'Playfair Display', serif;
-  font-size: 21px;
-  font-style: italic;
-  text-align: center;
-  color: #5a4d7c;
-}
-
-/* ===============================
-   Home – Books Preview
-================================ */
-.books-preview {
-  max-width: 1100px;
-  margin: 110px auto;
-  padding: 0 20px;
-}
-
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-}
-
-.book {
-  background: rgba(255,255,255,0.7);
-  padding: 25px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.book img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.book h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 21px;
-}
-
-.book p {
-  font-size: 14px;
-  color: #7a6fa3;
-}
-
-/* ===============================
-   Contact Page
-================================ */
-.contact-section {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.contact-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  margin-bottom: 15px;
-}
-
-.contact-section p {
-  max-width: 520px;
-  color: #5a4d7c;
-  margin-bottom: 45px;
-}
-
-.contact-icons {
-  display: flex;
-  gap: 70px;
-}
-
-.contact-icons a {
-  width: 56px;
-  height: 56px;
-  color: #6b5b95;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.contact-icons a:hover {
-  color: #ff7aa2;
-  transform: translateY(-8px);
-}
-
-/* ===============================
-   Books Page – Accordion
-================================ */
-.books-list {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-.book-card {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 25px 0;
-}
-
-.book-body {
-  display: none;
-  gap: 30px;
-}
-
-.book-card.active .book-body {
-  display: flex;
-}
-
-/* ===============================
-   Thoughts Page – FIXED LAYERING
+   Thoughts Page – WORKING VERSION
 ================================ */
 
 .thoughts-page {
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
-/* Background wandering layer */
+/* Floating layer MUST accept events */
 .wandering-layer {
   position: absolute;
   inset: 0;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: auto; /* 🔥 FIX */
 }
 
-/* Floating presences */
+/* Floating thoughts */
 .wander {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(255,255,255,0.35),
-    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.45),
+    rgba(255,255,255,0.15),
     transparent
   );
-  filter: blur(8px);
-  animation: drift 30s ease-in-out infinite alternate;
-  pointer-events: auto;
+  filter: blur(10px);
+  animation: drift 35s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+
+/* Placement (CRITICAL) */
+.wander:nth-child(1) {
+  top: 20%;
+  left: 12%;
+  animation-duration: 40s;
+}
+
+.wander:nth-child(2) {
+  top: 55%;
+  left: 60%;
+  animation-duration: 32s;
+}
+
+.wander:nth-child(3) {
+  top: 78%;
+  left: 30%;
+  animation-duration: 45s;
 }
 
 /* Foreground content */
@@ -264,15 +140,20 @@ section {
 .thought-stream {
   position: relative;
   z-index: 2;
+  pointer-events: none; /* text not clickable */
 }
 
 /* Drift motion */
 @keyframes drift {
-  from { transform: translateY(0); }
-  to { transform: translateY(-40px); }
+  from {
+    transform: translateY(0px) scale(1);
+  }
+  to {
+    transform: translateY(-45px) scale(1.05);
+  }
 }
 
-/* Mobile: disable wandering */
+/* Mobile safety */
 @media (max-width: 768px) {
   .wandering-layer {
     display: none;
