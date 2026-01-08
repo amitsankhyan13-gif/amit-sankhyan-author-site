@@ -1,1 +1,242 @@
+/* ===============================
+   Google Fonts (Fantasy + Clean)
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,500&family=Poppins:wght@300;400;500&display=swap');
+
+/* ===============================
+   Global Reset
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Body
+================================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fdf6f0, #f7f0ff);
+  color: #3a2f4f;
+  line-height: 1.8;
+  padding-bottom: 80px;
+}
+
+/* ===============================
+   Navigation
+================================ */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 8%;
+}
+
+.nav-name a {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #3a2f4f;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #6b5b95;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff7aa2;
+}
+
+/* ===============================
+   Author Bio
+================================ */
+.bio {
+  max-width: 900px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.author-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.bio p {
+  font-size: 17px;
+  color: #4a3f63;
+}
+
+/* ===============================
+   Thought Highlight
+================================ */
+.thought {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.thought blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: #5a4d7c;
+  text-align: center;
+}
+
+/* ===============================
+   Books Preview (Home)
+================================ */
+.books-preview {
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.books-preview h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.book {
+  background: rgba(255,255,255,0.7);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.book:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+}
+
+.book img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.book h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.book p {
+  font-size: 14px;
+  color: #7a6fa3;
+}
+
+/* ===============================
+   Books Page
+================================ */
+.books-page {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.books-page h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  margin: 50px 0 25px;
+}
+
+.book-detail {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.book-detail h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.book-detail p {
+  font-size: 15px;
+  color: #4a3f63;
+}
+
+.buy {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ff7aa2;
+}
+
+/* ===============================
+   Thoughts Page
+================================ */
+.thoughts-page {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.thoughts-page blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 40px;
+  color: #5a4d7c;
+  text-align: center;
+}
+
+/* ===============================
+   Contact Page
+================================ */
+.contact-page {
+  max-width: 600px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.contact-page p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #6b5b95;
+  cursor: pointer;
+}
+
+.contact-page p:hover {
+  color: #ff7aa2;
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 
