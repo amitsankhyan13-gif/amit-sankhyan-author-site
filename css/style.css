@@ -317,3 +317,12 @@ section {
     width: 200px;
   }
 }
+/* Hide all books by default (hash-controlled) */
+.book-card {
+  display: none;
+}
+
+/* Show active book */
+.book-card.active {
+  display: flex;
+}
