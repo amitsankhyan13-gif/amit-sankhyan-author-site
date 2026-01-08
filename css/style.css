@@ -13,7 +13,7 @@
 }
 
 /* ===============================
-   Body (Merged & Clean)
+   Body
 ================================ */
 body {
   font-family: 'Poppins', sans-serif;
@@ -21,13 +21,11 @@ body {
   color: #3a2f4f;
   line-height: 1.9;
   padding-bottom: 80px;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  animation: pageFade 0.8s ease forwards;
 }
 
 /* ===============================
-   Typography Hierarchy
+   Typography
 ================================ */
 h1, h2, h3 {
   letter-spacing: 0.5px;
@@ -42,11 +40,6 @@ h2 {
 p {
   font-size: 16px;
   letter-spacing: 0.2px;
-}
-
-blockquote {
-  line-height: 1.8;
-  letter-spacing: 0.3px;
 }
 
 /* ===============================
@@ -77,7 +70,6 @@ blockquote {
   text-decoration: none;
   color: #6b5b95;
   font-size: 15px;
-  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -85,181 +77,25 @@ blockquote {
 }
 
 /* ===============================
-   Section Spacing (Luxury Rhythm)
+   Section Reveal
 ================================ */
 section {
   margin-bottom: 120px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: sectionReveal 0.9s ease forwards;
 }
 
-/* ===============================
-   Author Bio
-================================ */
-.bio {
-  max-width: 900px;
-  margin: 100px auto 120px;
-  text-align: center;
-  padding: 0 20px;
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.author-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 30px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-.bio p {
-  font-size: 17px;
-  color: #4a3f63;
-}
-
-/* ===============================
-   Thought Highlight (Home)
-================================ */
-.thought {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 40px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.thought blockquote {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-style: italic;
-  color: #5a4d7c;
-  text-align: center;
-}
-
-/* ===============================
-   Books Preview (Home)
-================================ */
-.books-preview {
-  max-width: 1100px;
-  margin: 120px auto;
-  padding: 0 20px;
-}
-
-.books-preview h2 {
-  text-align: center;
-}
-
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
-.book {
-  background: rgba(255,255,255,0.7);
-  padding: 25px;
-  border-radius: 20px;
-  text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.book:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 40px rgba(0,0,0,0.12);
-}
-
-.book img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
-}
-
-.book h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.book p {
-  font-size: 14px;
-  color: #7a6fa3;
-}
-
-/* ===============================
-   Books Page
-================================ */
-.books-page {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-.books-page h2 {
-  margin-top: 80px;
-}
-
-/* Book Card (Merged & Clean) */
-.book-detail {
-  margin: 30px 0 40px;
-  padding: 25px;
-  cursor: pointer;
-  border-radius: 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-
-.book-detail h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.book-detail p {
-  font-size: 15px;
-  color: #4a3f63;
-}
-
-.book-detail:hover {
-  background: rgba(255,255,255,0.5);
-}
-
-.book-detail.active {
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-/* Expand / Collapse Content */
-.book-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.book-detail.active .book-content {
-  max-height: 500px;
-}
-
-.buy {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #ff7aa2;
-}
-
-/* ===============================
-   Thoughts Page
-================================ */
-.thoughts-page {
-  max-width: 800px;
-  margin: 100px auto;
-  padding: 0 20px;
-}
-
-.thoughts-page blockquote {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-style: italic;
-  margin-bottom: 60px;
-  color: #5a4d7c;
-  text-align: center;
+@keyframes sectionReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===============================
@@ -283,11 +119,13 @@ section {
 
 .contact-section p {
   max-width: 520px;
-  font-size: 16px;
   color: #5a4d7c;
   margin-bottom: 50px;
 }
 
+/* ===============================
+   Contact Icons (FINAL & CORRECT)
+================================ */
 .contact-icons {
   display: flex;
   gap: 70px;
@@ -305,17 +143,7 @@ section {
   height: 100%;
 }
 
-/* Outline icons (Email, Instagram) */
-.contact-icons a svg[fill="none"] {
-  stroke: currentColor;
-}
-
-/* Solid icons (LinkedIn) */
-.contact-icons a svg[fill="currentColor"] {
-  fill: currentColor;
-}
-
-
+/* Hover */
 .contact-icons a:hover {
   color: #ff7aa2;
   transform: translateY(-10px);
@@ -332,144 +160,5 @@ section {
 
   h2 {
     font-size: 30px;
-  }
-}
-/* ===============================
-   Page Fade-In Animation
-================================ */
-body {
-  animation: pageFade 0.8s ease forwards;
-}
-
-@keyframes pageFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/* ===============================
-   Section Reveal Animation
-================================ */
-section {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: sectionReveal 0.9s ease forwards;
-}
-
-section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.35s; }
-section:nth-of-type(3) { animation-delay: 0.5s; }
-section:nth-of-type(4) { animation-delay: 0.65s; }
-
-@keyframes sectionReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* ===============================
-   Scalable Book System
-================================ */
-
-/* Universal book wrapper */
-.book,
-.book-detail {
-  max-width: 100%;
-}
-
-/* Future book consistency */
-.book-detail + .book-detail {
-  margin-top: 40px;
-}
-
-/* Book metadata styling */
-.book-detail p strong {
-  font-weight: 500;
-  color: #3a2f4f;
-}
-
-/* Optional future tag (genre, series, etc.) */
-.book-tag {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 13px;
-  color: #6b5b95;
-  border: 1px solid rgba(107,91,149,0.3);
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-/* ===============================
-   Read More Button (Home)
-================================ */
-.read-more {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 14px;
-  text-decoration: none;
-  color: #6b5b95;
-  border-bottom: 1px solid transparent;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.read-more:hover {
-  color: #ff7aa2;
-  border-color: #ff7aa2;
-}
-/* ===============================
-   Books Page – Left / Right Layout
-================================ */
-.books-layout {
-  display: grid;
-  grid-template-columns: 1fr 2.5fr;
-  gap: 60px;
-  align-items: flex-start;
-}
-
-/* Left list */
-.book-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.book-item {
-  cursor: pointer;
-  font-size: 16px;
-  color: #6b5b95;
-  padding-left: 10px;
-  border-left: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.book-item:hover {
-  color: #ff7aa2;
-}
-
-.book-item.active {
-  color: #3a2f4f;
-  border-color: #ff7aa2;
-  font-weight: 500;
-}
-
-/* Right content */
-.book-display .book-detail {
-  display: none;
-}
-
-.book-display .book-detail.active {
-  display: block;
-  animation: fadeUp 0.4s ease;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
