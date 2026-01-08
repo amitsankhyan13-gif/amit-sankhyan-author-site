@@ -33,11 +33,11 @@
   </section>
 
   <!-- Thought -->
-  <section class="thought">
-    <blockquote>
-      “The most important lessons are not taught loudly — they are felt quietly.”
-    </blockquote>
-  </section>
+ <section class="thought">
+  <blockquote id="home-thought">
+    <!-- Thought will be injected here -->
+  </blockquote>
+</section>
 
   <!-- Books Preview -->
   <section class="books-preview">
@@ -66,6 +66,35 @@
       </div>
     </div>
   </section>
+<script src="js/thoughts-data.js"></script>
+
+<script>
+(function () {
+  const thoughtEl = document.getElementById("home-thought");
+  if (!thoughtEl) return;
+
+  function getDayOfYear() {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff =
+      now - start +
+      (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
+    return Math.floor(diff / (1000 * 60 * 60 * 24));
+  }
+
+  let thoughtText = "";
+
+  if (thoughtsData.manualActive) {
+    thoughtText = thoughtsData.manualThought.text;
+  } else {
+    const dayIndex =
+      getDayOfYear() % thoughtsData.dailyThoughts.length;
+    thoughtText = thoughtsData.dailyThoughts[dayIndex];
+  }
+
+  thoughtEl.textContent = thoughtText;
+})();
+</script>
 
 </body>
 </html>
