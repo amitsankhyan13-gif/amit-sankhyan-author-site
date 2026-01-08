@@ -336,3 +336,82 @@ section {
     width: 200px;
   }
 }
+/* ===============================
+   Thoughts Page – Featured + Stream
+================================ */
+
+/* Featured Thought */
+.featured-thought {
+  max-width: 700px;
+  margin: 120px auto 140px;
+  text-align: center;
+}
+
+.featured-thought blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  line-height: 1.7;
+  color: #3a2f4f;
+  font-style: italic;
+}
+
+/* Thought Stream */
+.thought-stream {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Soft Thought Cards */
+.thought-card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 45px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 22px;
+}
+
+.thought-card blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #5a4d7c;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Subtle rhythm variation */
+.thought-card:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.thought-card:nth-child(even) {
+  align-self: flex-end;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .featured-thought {
+    margin: 90px auto 110px;
+  }
+
+  .featured-thought blockquote {
+    font-size: 24px;
+  }
+
+  .thought-stream {
+    gap: 60px;
+  }
+
+  .thought-card {
+    padding: 30px 28px;
+  }
+
+  .thought-card,
+  .thought-card:nth-child(odd),
+  .thought-card:nth-child(even) {
+    align-self: center;
+  }
+}
